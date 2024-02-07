@@ -1,6 +1,6 @@
 import os
-def MenuPrincipal()->int:
-    op = '1.Agregar equipo\n2. Registro de partidos\n3.Reportes de tabla de posciones\n4.Salir'
+def MenuPrincipal():
+    listopciones = [1,2,3,4,5]
     titulo = """
     ------------------------------------------
       +                                        +
@@ -8,8 +8,18 @@ def MenuPrincipal()->int:
     +                                        +
     ------------------------------------------
     """
+    os.system('cls')
     print (titulo)
-    print (op)
-    op = int (input(':_)'))
-    return op
+    try: 
+      opciones = ('1.Agregar equipo\n2. Registro de partidos\n3.Reportes de tabla de posiciones\n4. Tabla de posiciones\n5.Salir')
+      print (opciones)
+      op = int (input(':_)'))
+      if not (op in listopciones):
+        MenuPrincipal()
+    except ValueError:
+      print('Dato invalido')
+      os.system('pause')
+      MenuPrincipal()
+    else:
+      return op
           
